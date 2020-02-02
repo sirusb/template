@@ -2,7 +2,7 @@
 `template` package
 ------------------
 
-### Generic template for research projects structured as R packages.
+### Generic template for research projects structured as R packages (adapted from Pakillo/template)
 
 [![Travis-CI Build Status](https://travis-ci.org/Pakillo/template.svg?branch=master)](https://travis-ci.org/Pakillo/template)
 
@@ -18,7 +18,7 @@ A short presentation introducing this approach on 'Structuring data analysis pro
 
 ``` r
 library("devtools")
-install_github("Pakillo/template")
+install_github("sirusb/template")
 ```
 
 ### Usage
@@ -62,6 +62,10 @@ Note that to create a GitHub repo you will need to have configured your system a
 6.  If you write custom functions, place them in the `R` folder. Document all your functions with `Roxygen` (see <http://r-pkgs.had.co.nz/man.html>). Write tests for your functions (see <http://r-pkgs.had.co.nz/tests.html>) and place them in the `tests` folder.
 
 7.  Write a `makefile` or master script to organise and execute all parts of the analysis. Render Rmarkdown reports using `rmarkdown::render`, and use Rstudio `Build` menu to create/update documentation, run tests, build package, etc.
+
+8.  Save all the figures to the `figures` folder. You can create sub-directories inside to keep it organized.
+
+9. Save the ppt reports to the `reports` folder.
 
 8.  Share.
 

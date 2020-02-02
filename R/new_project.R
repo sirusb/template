@@ -17,13 +17,16 @@ new_project <- function(name, github = FALSE, private.repo = TRUE, travis = FALS
   devtools::create(name)
   try(use_package_doc(name), silent = TRUE)
   try(use_readme_rmd(name), silent = TRUE)
-  use_data_raw(name)
-  use_testthat(name)
 
+  usethis::with_project(name,use_testthat())
+
+  dir.create(file.path(name, "data-raw"))
   dir.create(file.path(name, "data"))
   dir.create(file.path(name, "analyses"))
   dir.create(file.path(name, "manuscript"))
-  cat("\n^analyses$ \n^manuscript$ \n", sep = "",
+  dir.create(file.path(name, "reports"))
+  dir.create(file.path(name, "figures"))
+  cat("\n^analyses$ \n^manuscript$ \n^reports$ \n^figures$ \n", sep = "",
       file = file.path(name, ".Rbuildignore"), append = TRUE)
 
   if (github){
